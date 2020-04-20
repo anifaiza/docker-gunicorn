@@ -23,8 +23,6 @@ To build and run the docker container we do
 
 $ docker-compose up
 
-<image src="https://github.com/anifaiza/docker-gunicorn/blob/master/screenshots/dockerComposeUp.png" width="0.5" height="0.5">
-
 ![docker-compose-up](https://github.com/anifaiza/docker-gunicorn/blob/master/screenshots/dockerComposeUp.png)
 
 to check the list of running containers
