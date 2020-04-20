@@ -8,10 +8,11 @@ services:
 
     create:
         image: gunicorncreate
+        build: myproject_create/.
 
     show:
         image: gunicornshow
-        
+        build: myproject_show/.
     
     
 
