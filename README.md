@@ -16,14 +16,14 @@ here, 'localhost' should be replaced with the container's ip address followed by
 
 ## Use Case diagram 
 
-![docker-ps](screenshots/usecase)
+![docker-ps](https://github.com/anifaiza/docker-gunicorn/blob/master/screenshots/usecase.png)
 
 ## Some screenshots from my system
 To build and run the docker container we do
 
 $ docker-compose up
 
-![docker-compose-up](screenshots/DockerComposeUp)
+![docker-compose-up](https://github.com/anifaiza/docker-gunicorn/blob/master/screenshots/dockerComposeUp.png)
 
 to check the list of running containers
 
@@ -33,10 +33,10 @@ and to inspect the overall state of the container
 
 $ docker inspect <container_id>
 
-![docker-ps](screenshots/runningContainers)
+![docker-ps](https://github.com/anifaiza/docker-gunicorn/blob/master/screenshots/runningContainers.png)
 
 testing if the two services are running
 
-![docker-ps](screenshots/postman_create)
+![docker-ps](https://github.com/anifaiza/docker-gunicorn/blob/master/screenshots/postman_create.png)
 
-![docker-ps](screenshots/postman_show)
+![docker-ps](https://github.com/anifaiza/docker-gunicorn/blob/master/screenshots/postman_show.png)
