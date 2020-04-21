@@ -9,8 +9,19 @@ app.config["MONGO_URI"] = "mongodb+srv://anika:anikafaiza@anika-kz9mx.mongodb.ne
 #config_object = 'app.connect_db'
 #app.config.from_object(config_object)
 
-mongo = PyMongo(app)
+class singletonMeta(type):    
+    __instances={}
 
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls.__instances:
+            cls.__instances[cls] = super(singletonMeta, cls).__call__(*args, **kwargs)
+
+        return cls.__instances[cls]
+
+class MongoCon(object):
+    __metaclass__ = singletonMeta
+    def __init__(self):
+        self.connection=PyMongo(app)
 
 ma = Marshmallow(app)
 class UserSchema(ma.Schema):
@@ -21,7 +32,8 @@ user_schema = UserSchema(many=True)
 
 @app.route('/api/show', methods=['GET'])
 def show():
-    user_collection = mongo.db.users
+    obj = MongoCon()
+    user_collection = obj.connection.db.users
     all_user = user_collection.find({})
     result = user_schema.dump(all_user)
     return jsonify(result)
