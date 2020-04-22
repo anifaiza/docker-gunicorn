@@ -2,9 +2,9 @@ FROM python:3
 
 RUN python3 -m pip install --upgrade pip 
 
-WORKDIR /home/anika/myWorkingSpace/myproject20Apr/myproject_create
+WORKDIR /home/anika/myWorkingSpace/docker-gunicorn/myproject_create
 
-COPY . /home/anika/myWorkingSpace/myproject20Apr/myproject_create
+COPY . /home/anika/myWorkingSpace/docker-gunicorn/myproject_create
 
 RUN pip3 install -r requirements.txt
 

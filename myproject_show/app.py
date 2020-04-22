@@ -1,13 +1,10 @@
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request, jsonify, make_response, Response
 from flask_marshmallow import Marshmallow
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 
 app.config["MONGO_URI"] = "mongodb+srv://anika:anikafaiza@anika-kz9mx.mongodb.net/test?retryWrites=true&w=majority"
-
-#config_object = 'app.connect_db'
-#app.config.from_object(config_object)
 
 class singletonMeta(type):    
     __instances={}
