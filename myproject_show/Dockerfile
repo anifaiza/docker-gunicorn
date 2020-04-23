@@ -8,4 +8,4 @@ COPY . /home/anika/myWorkingSpace/docker-gunicorn/myproject_create
 
 RUN pip3 install -r requirements.txt
 
-CMD ["gunicorn", "-b", "0.0.0.0:9090", "-w", "4", "app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "-w", "4", "app:app"]

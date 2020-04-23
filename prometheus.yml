@@ -11,4 +11,4 @@ global:
     - job_name: 'webservers'
   
           static_configs:
-          - targets: ['0.0.0.0:9100']
+          - targets: ['0.0.0.0:5000']
