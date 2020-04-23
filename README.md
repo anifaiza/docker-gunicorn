@@ -28,7 +28,7 @@ After building and running the docker container go to
 go to <ip_of_running_container>:9090/graphs
 and you can see a text box whrere you can write your promql queries and execute
 
-![prometheus interface](https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/promInterface.png)
+![prometheus interface](https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/promInterfaeAt9090Port.png)
 
 query: prom_http_requests_total
 
@@ -46,8 +46,8 @@ query: prom_http_duration_seconds_sum
 
 query: prom_scrape_duration_seconds
 
-[prom_scrape_duration_seconds](https://github.com/anifaiza/docker-gunicorn/tree/prometheus/screenshots/prom_scrape_duration_seconds.png) 
+[prom_scrape_duration_seconds](https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_scrape_duration_seconds.png) 
 
 [prom_scrape_duration_seconds_graph]
-(https://github.com/anifaiza/docker-gunicorn/tree/prometheus/screenshots/prom_scrape_duration_seconds_graph.png)
+(https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_scrape_duration_seconds_graph.png)
 
