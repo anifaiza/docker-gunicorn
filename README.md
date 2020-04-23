@@ -32,22 +32,22 @@ and you can see a text box whrere you can write your promql queries and execute
 
 query: prom_http_requests_total
 
-[prom_http_requests_total](https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_http_requests_total.png) 
+![prom_http_requests_total](https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_http_requests_total.png) 
 
-[prom_http_requests_total_graph]
+![prom_http_requests_total_graph]
 (https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_http_requests_total_graph.png)
 
 query: prom_http_duration_seconds_sum
 
-[prom_http_duration_seconds_sum](https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_http_duration_seconds_sum.png) 
+![prom_http_duration_seconds_sum](https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_http_duration_seconds_sum.png) 
 
-[prom_http_duration_seconds_sum_graph]
+![prom_http_duration_seconds_sum_graph]
 (https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_http_duration_seconds_sum_graph.png)
 
 query: prom_scrape_duration_seconds
 
-[prom_scrape_duration_seconds](https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_scrape_duration_seconds.png) 
+![prom_scrape_duration_seconds](https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_scrape_duration_seconds.png) 
 
-[prom_scrape_duration_seconds_graph]
+![prom_scrape_duration_seconds_graph]
 (https://github.com/anifaiza/docker-gunicorn/blob/prometheus/screenshots/prom_scrape_duration_seconds_graph.png)
 
