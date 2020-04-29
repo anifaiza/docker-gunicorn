@@ -8,8 +8,6 @@ COPY . /home/anika/myWorkingSpace/postgreSQL/blu
 
 RUN pip3 install -r requirements.txt
 
-ENV FLASK_ENV = "docker"
-
 EXPOSE 5000
 
 ENTRYPOINT [ "python3" ]
