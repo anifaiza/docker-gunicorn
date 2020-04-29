@@ -1,0 +1,28 @@
+version: '3.6'
+
+services:
+  api:
+    build: .
+    depends_on:
+      - db
+    environment:
+      SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://postgres:anika@localhost/flaskapp
+    ports: 
+      - 5000:5000
+    volumes:
+      - .:/usr/src/app/app
+      - ./migrations:/usr/src/app/migrations
+    restart: always
+
+  db:
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: anika
+      POSTGRES_DB: flaskapp
+    image: postgres:latest
+    ports:
+      - 5405:5432
+    restart: always
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
