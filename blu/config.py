@@ -11,4 +11,4 @@ class BaseConfig:
     port = os.environ.get('POSTGRES_PORT')
     #DATABASE_CONNECTION_URI = f'postgresql+psycopg2://postgres:anika@0.0.0.0:5401/flaskapp'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = f'postgresql://postgres@db/postgres'
+    SQLALCHEMY_DATABASE_URI = f'postgresql://{user}@db/{database}'

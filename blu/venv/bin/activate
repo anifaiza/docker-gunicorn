@@ -74,8 +74,3 @@ fi
 if [ -n "${BASH:-}" -o -n "${ZSH_VERSION:-}" ] ; then
     hash -r
 fi
-export POSTGRES_URL="127.0.0.1:5432"
-export POSTGRES_USER="postgres"
-export POSTGRES_PASSWORD="anika"
-export POSTGRES_DB="flaskapp"
-POSTGRES_HOST_AUTH_METHOD="trust"
