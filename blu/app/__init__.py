@@ -1,7 +1,8 @@
 from flask import Flask, Blueprint
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-import os, config
+import os
+import config
     
 db = SQLAlchemy()
 ma = Marshmallow()

@@ -40,7 +40,7 @@ def add_user():
     hashed_pass = generate_password_hash(password, method='sha256')
     pub_id = str(uuid.uuid4())
 
-    new_user = User(pub_id, name, username, email, hashed_pass, True)
+    new_user = User(pub_id, name, username, email, hashed_pass, False)
 
     db.session.add(new_user)
     db.session.commit()
@@ -48,11 +48,7 @@ def add_user():
     return jsonify({'msg': 'new user created'})   
 
 @main.route('/user', methods=['GET'])
-@token_required
-def get_users(current_user):
-    if not current_user.admin:
-        return jsonify({'message': 'You are not authorized for this function!'})
-
+def get_users():
     all_users = User.query.all()
     result = users_schema.dump(all_users)
     return jsonify(result)
