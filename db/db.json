@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "anika",
+      "email": "anika@email.com",
+      "username": "anika_u",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "name": "faiza",
+      "email": "faiza@email.com",
+      "username": "faiza_u",
+      "password": "1234"
+    },
+    {
+      "id": 3,
+      "name": "priota",
+      "email": "priota@email.com",
+      "username": "priota_u",
+      "password": "1234"
+    },
+    {
+      "id": "4",
+      "name": "Ilham",
+      "username": "Ilham_u",
+      "email": "Ilham@email.com",
+      "password": "2345"
+    },
+    {
+      "id": "5",
+      "name": "wafiqa",
+      "username": "wafiqa_u",
+      "email": "wafiqa@email.com",
+      "password": "$2a$10$tDHjpajMYx.xXyzyGeKozu/woGnSA/ZZwTrkq1TMRJTp20z0YB3Zu"
+    }
+  ]
+}
