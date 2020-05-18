@@ -25,6 +25,7 @@ class Register extends React.Component{
             body: JSON.stringify(this.state)
         }).then((result)=>{
             result.json().then((resp)=>{
+                console.log(resp)
                 alert('User added to list')
             })
         })

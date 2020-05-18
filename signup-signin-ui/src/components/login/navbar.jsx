@@ -10,13 +10,15 @@ class Navbar extends Component {
         return (
             <div>
                 <ul>
-                    <li><Link to="/register">Register</Link></li>
                     <li><Link to="/userlist">Users</Link></li>
                     {
                         localStorage.getItem('Login') ?
                             <li><Link to="/logout">Logout</Link></li>
                             :
-                            <li><Link to="/login">Login</Link></li>
+                            <div>
+                                <li><Link to="/login">Login</Link></li>
+                                <li><Link to="/register">Register</Link></li>
+                            </div>
                     }
                 </ul>
             </div>

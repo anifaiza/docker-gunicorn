@@ -11,6 +11,7 @@ class Userlist extends Component {
 
     componentDidMount() {
         fetch("http://localhost:3000/users").then((response) => {
+            console.log(response)
             response.json().then((result) => {
                 this.setState({ list: result })
             })

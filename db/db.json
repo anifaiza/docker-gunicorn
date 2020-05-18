@@ -34,6 +34,13 @@
       "username": "wafiqa_u",
       "email": "wafiqa@email.com",
       "password": "$2a$10$tDHjpajMYx.xXyzyGeKozu/woGnSA/ZZwTrkq1TMRJTp20z0YB3Zu"
+    },
+    {
+      "id": "6",
+      "name": "Anisha",
+      "username": "anisha_u",
+      "email": "anisha@email.com",
+      "password": "1234"
     }
   ]
 }
