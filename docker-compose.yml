@@ -1,4 +1,23 @@
 version : '3'
 services:
-    web:
+    frontend_reactjs:
         build: signup-signin-ui/.
+        ports:
+            - "3001:80"
+        links: 
+            - "json-server"
+        networks:
+            - myytnetwork
+
+    json-server:
+        build: db/.
+        ports:
+            - "3000:3000"
+        restart: always
+        networks:
+            - myytnetwork
+
+
+networks:
+    myytnetwork:
+        driver: bridge
