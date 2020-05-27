@@ -1,71 +1,104 @@
 import React from 'react';
-//import loginImg from '../../login.svg';
-import Navbar  from "./navbar";
+import Navbar from "./navbar";
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createUsers } from '../../actions/userActions';
 import bcrypt from "bcryptjs";
 
-class Register extends React.Component{
+class Register extends React.Component {
 
-    constructor(){
+    constructor() {
         super();
-        this.state={
-            id: null,
+        this.state = {
             name: null,
             username: null,
             email: null,
             password: null,
-        }
+        };
+        this.onSubmit = this.onSubmit.bind(this);
+        this.onChange = this.onChange.bind(this)
     }
 
-    create(){
-        fetch("http://localhost:3000/users",{
-            method: "Post",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(this.state)
-        }).then((result)=>{
-            result.json().then((resp)=>{
-                console.log(resp)
-                alert('User added to list')
-            })
-        })
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+        this.setState({ [e.target.username]: e.target.value });
+        this.setState({ [e.target.email]: e.target.value });
+        this.setState({ [e.target.password]: e.target.value });
     }
 
-    render(){
-        return(
+    onSubmit(e) {
+        e.preventDefault();
+
+        const user = {
+            id: this.state.id,
+            name: this.state.name,
+            username: this.state.username,
+            email: this.state.username,
+            password: this.state.password
+        };
+        this.props.createUsers(user);
+    }
+
+    render() {
+        return (
             <div className='base-container'>
                 <Navbar/>
-                <div className='header'>Register</div>
-                <div className='content'>
-                    <div className='form'>
-                    <div className='form-group'>
-                            <label htmlFor="id">Id</label>
-                            <input type='text' name='id' placeholder='id' onChange={(event)=>{this.setState({id: event.target.value})}}/>
-                        </div>
-                        <div className='form-group'>
-                            <label htmlFor="name">Name</label>
-                            <input type='text' name='name' placeholder='name' onChange={(event)=>{this.setState({name: event.target.value})}}/>
-                        </div>
-                        <div className='form-group'>
-                            <label htmlFor="email">Email</label>
-                            <input type='text' name='email' placeholder='email' onChange={(event)=>{this.setState({email: event.target.value})}}/>
-                        </div>
-                        <div className='form-group'>
-                            <label htmlFor="username">Username</label>
-                            <input type='text' name='username' placeholder='username' onChange={(event)=>{this.setState({username: event.target.value})}}/>
-                        </div>
-                        <div className='form-group'>
-                            <label htmlFor="password">Password</label>
-                            <input type='password' name='password' placeholder='password' onChange={(event)=>{this.setState({password: event.target.value})}}/>
-                        </div>
+            <div>
+                <h1>Register</h1>
+                <form onSubmit={this.onSubmit}>
+                    <div>
+                        <label>Name: </label>
+                        <br />
+                        <input
+                            type="text"
+                            name="name"
+                            onChange={this.onChange}
+                            value={this.state.name}
+                        />
                     </div>
-                </div>
-                <div className='footer'>
-                    <button type="submit" className='btn' onClick={()=>{this.create()}}>Register</button>
-                </div>
+                    <br />
+                    <div>
+                        <label>Email: </label>
+                        <br />
+                        <input
+                            name="email"
+                            onChange={this.onChange}
+                            value={this.state.email}
+                        />
+                    </div>
+                    <br />
+                    <div>
+                        <label>Username: </label>
+                        <br />
+                        <input
+                            type="text"
+                            name="username"
+                            onChange={this.onChange}
+                            value={this.state.username}
+                        />
+                    </div>
+                    <br />
+                    <div>
+                        <label>Password: </label>
+                        <br />
+                        <input
+                            type="password"
+                            name="password"
+                            onChange={this.onChange}
+                            value={this.state.password}
+                        />
+                    </div>
+                    <br />
+                    <button type="submit">Submit</button>
+                </form>
             </div>
-        )
+            </div>
+        );
     }
 }
 
-export default Register;
+Register.propTypes = {
+    createUsers: PropTypes.func.isRequired
+};
+
+export default connect(null, { createUsers })(Register);

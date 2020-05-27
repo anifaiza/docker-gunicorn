@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 import Navbar  from "./navbar";
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { fetchUsers } from '../../actions/userActions'
 
 class Userlist extends Component {
-    constructor() {
-        super()
-        this.state = {
-            list: null,
-        }
-    }
 
     componentDidMount() {
-        fetch("http://localhost:3000/users").then((response) => {
-            console.log(response)
-            response.json().then((result) => {
-                this.setState({ list: result })
-            })
-        })
+        this.props.fetchUsers();
     }
 
     render() {
@@ -24,10 +16,10 @@ class Userlist extends Component {
                 <Navbar/>
                 <h1>Users</h1>
                 {
-                    this.state.list ?
+                    this.props.users ?
                         <div>
                             {
-                                this.state.list.map((item, i) => <div>{item.name}</div>)
+                                this.props.users.map((item, i) => <div>{item.name}</div>)
                             }
                         </div>
                         : <p>Please Wait...</p>
@@ -37,4 +29,13 @@ class Userlist extends Component {
     }
 }
 
-export default Userlist;
+Userlist.propTypes = {
+    fetchUsers : PropTypes.func.isRequired,
+    users : PropTypes.array.isRequired
+}
+
+const mapStateToProps = state => ({
+    users : state.users.users
+})
+
+export default connect(mapStateToProps, {fetchUsers})(Userlist);
