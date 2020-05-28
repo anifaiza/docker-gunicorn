@@ -22,21 +22,21 @@
       "password": "1234"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Ilham",
       "username": "Ilham_u",
       "email": "Ilham@email.com",
       "password": "2345"
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "wafiqa",
       "username": "wafiqa_u",
       "email": "wafiqa@email.com",
       "password": "$2a$10$tDHjpajMYx.xXyzyGeKozu/woGnSA/ZZwTrkq1TMRJTp20z0YB3Zu"
     },
     {
-      "id": "6",
+      "id": 6,
       "name": "Anisha",
       "username": "anisha_u",
       "email": "anisha@email.com",

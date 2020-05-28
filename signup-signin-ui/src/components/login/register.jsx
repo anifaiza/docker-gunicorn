@@ -1,59 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from "./navbar";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createUsers } from '../../actions/userActions';
 import bcrypt from "bcryptjs";
 
-class Register extends React.Component {
+const Register = (props) => {
 
-    constructor() {
-        super();
-        this.state = {
-            name: null,
-            username: null,
-            email: null,
-            password: null,
-        };
-        this.onSubmit = this.onSubmit.bind(this);
-        this.onChange = this.onChange.bind(this)
-    }
+    const [name, setName] = useState('');
+    const [username, setUsername] = useState(' ');
+    const [email, setEmail] = useState(' ');
+    const [password, setPassword] = useState(' ');
 
-    onChange(e) {
-        this.setState({ [e.target.name]: e.target.value });
-        this.setState({ [e.target.username]: e.target.value });
-        this.setState({ [e.target.email]: e.target.value });
-        this.setState({ [e.target.password]: e.target.value });
-    }
-
-    onSubmit(e) {
+    const onSubmit = e => {
         e.preventDefault();
 
         const user = {
-            id: this.state.id,
-            name: this.state.name,
-            username: this.state.username,
-            email: this.state.username,
-            password: this.state.password
+            name: name,
+            username: username,
+            email: email,
+            password: password
         };
-        this.props.createUsers(user);
+        props.createUsers(user);
     }
 
-    render() {
-        return (
-            <div className='base-container'>
-                <Navbar/>
+    return (
+        <div className='base-container'>
+            <Navbar />
             <div>
                 <h1>Register</h1>
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={onSubmit}>
                     <div>
                         <label>Name: </label>
                         <br />
                         <input
                             type="text"
                             name="name"
-                            onChange={this.onChange}
-                            value={this.state.name}
+                            onChange={event => setName(event.target.value)}
+                            value={name}
                         />
                     </div>
                     <br />
@@ -62,8 +46,8 @@ class Register extends React.Component {
                         <br />
                         <input
                             name="email"
-                            onChange={this.onChange}
-                            value={this.state.email}
+                            onChange={event => setEmail(event.target.value)}
+                            value={email}
                         />
                     </div>
                     <br />
@@ -73,8 +57,8 @@ class Register extends React.Component {
                         <input
                             type="text"
                             name="username"
-                            onChange={this.onChange}
-                            value={this.state.username}
+                            onChange={event => setUsername(event.target.value)}
+                            value={username}
                         />
                     </div>
                     <br />
@@ -84,17 +68,15 @@ class Register extends React.Component {
                         <input
                             type="password"
                             name="password"
-                            onChange={this.onChange}
-                            value={this.state.password}
+                            onChange={event => setPassword(event.target.value)}
                         />
                     </div>
                     <br />
                     <button type="submit">Submit</button>
                 </form>
             </div>
-            </div>
-        );
-    }
+        </div>
+    );
 }
 
 Register.propTypes = {

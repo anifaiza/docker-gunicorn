@@ -1,32 +1,30 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import Navbar  from "./navbar";
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchUsers } from '../../actions/userActions'
 
-class Userlist extends Component {
+const Userlist = (props) => {
 
-    componentDidMount() {
-        this.props.fetchUsers();
-    }
+    useEffect(() =>{
+        props.fetchUsers();
+    })
 
-    render() {
         return (
             <div>
                 <Navbar/>
                 <h1>Users</h1>
                 {
-                    this.props.users ?
+                    props.users ?
                         <div>
                             {
-                                this.props.users.map((item, i) => <div>{item.name}</div>)
+                                props.users.map((item, i) => <div>{item.name}</div>)
                             }
                         </div>
                         : <p>Please Wait...</p>
                 }
             </div>
         );
-    }
 }
 
 Userlist.propTypes = {
@@ -35,7 +33,8 @@ Userlist.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    users : state.users.users
+    users : state.users.users,
+    newUser: state.users.user
 })
 
 export default connect(mapStateToProps, {fetchUsers})(Userlist);

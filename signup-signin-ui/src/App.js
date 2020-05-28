@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import './App.css';
 import Login from "./components/login/login";
 import Userlist from "./components/login/userlist";
